@@ -1,0 +1,4 @@
+C:\Users\Admin\Desktop\IIHT\WebAPI\WebApi\NunitTest\bin\Debug\netstandard1.4\NunitTest.deps.json
+C:\Users\Admin\Desktop\IIHT\WebAPI\WebApi\NunitTest\bin\Debug\netstandard1.4\NunitTest.dll
+C:\Users\Admin\Desktop\IIHT\WebAPI\WebApi\NunitTest\obj\Debug\netstandard1.4\NunitTest.csprojResolveAssemblyReference.cache
+C:\Users\Admin\Desktop\IIHT\WebAPI\WebApi\NunitTest\obj\Debug\netstandard1.4\NunitTest.AssemblyInfo.cs

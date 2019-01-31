@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="FSDTestModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Person">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="password" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="fullName" Type="varchar" MaxLength="30" />
+    <Property Name="email" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="joined" Type="datetime" Nullable="false" />
+    <Property Name="active" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Tweet">
+    <Key>
+      <PropertyRef Name="TweetId" />
+    </Key>
+    <Property Name="TweetId" Type="int" Nullable="false" />
+    <Property Name="UserId" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="message" Type="varchar" MaxLength="30" />
+    <Property Name="created" Type="datetime" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__Tweet__UserId__17F790F9">
+    <End Role="Person" Type="Self.Person" Multiplicity="1" />
+    <End Role="Tweet" Type="Self.Tweet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Person">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Tweet">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="FSDTestModelStoreContainer">
+    <EntitySet Name="Person" EntityType="Self.Person" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tweet" EntityType="Self.Tweet" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Tweet__UserId__17F790F9" Association="Self.FK__Tweet__UserId__17F790F9">
+      <End Role="Person" EntitySet="Person" />
+      <End Role="Tweet" EntitySet="Tweet" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

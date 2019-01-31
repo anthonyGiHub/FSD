@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="FSDTestModelStoreContainer" CdmEntityContainer="FSDTestEntities">
+    <EntitySetMapping Name="People">
+      <EntityTypeMapping TypeName="FSDTestModel.Person">
+        <MappingFragment StoreEntitySet="Person">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="fullName" ColumnName="fullName" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="joined" ColumnName="joined" />
+          <ScalarProperty Name="active" ColumnName="active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tweets">
+      <EntityTypeMapping TypeName="FSDTestModel.Tweet">
+        <MappingFragment StoreEntitySet="Tweet">
+          <ScalarProperty Name="TweetId" ColumnName="TweetId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="message" ColumnName="message" />
+          <ScalarProperty Name="created" ColumnName="created" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
